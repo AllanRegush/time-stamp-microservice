@@ -1,0 +1,37 @@
+{
+  "name": "time-stamp-microservice",
+  "version": "1.0.0",
+  "description": "FCC Backend Project - TimeStamp",
+  "main": "server.js",
+  "scripts": {
+    "watch": "nodemon ./start.js --ignore public/",
+    "start": "concurrently \"npm run watch\"",
+    "watch-test": "npm run test -- --watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllanRegush/time-stamp-microservice.git"
+  },
+  "author": "Allan Regush",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AllanRegush/time-stamp-microservice/issues"
+  },
+  "homepage": "https://github.com/AllanRegush/time-stamp-microservice#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}
