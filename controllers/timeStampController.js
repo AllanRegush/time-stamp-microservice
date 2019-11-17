@@ -1,5 +1,10 @@
 // TODO AR: design controller
+const helpers = require('../helpers');
 
 exports.getStamp = (req, res) => {
-    res.sendStatus(200);
+    const { date_string } = req.params;
+    const payload = {
+        date: helpers.convertDate(date_string)
+    }
+    res.json(payload);
 } 
