@@ -19,4 +19,4 @@ e.g. `{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}`.
 
 #### Trello Board
 Trello was used for project management
-[Progress Board](https://trello.com/b/HsyYED0N)
+-[Progress Board](https://trello.com/b/HsyYED0N)
