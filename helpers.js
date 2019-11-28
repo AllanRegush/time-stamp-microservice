@@ -1,4 +1,4 @@
-exports.convertDate = date => {
+const convertDate = date => {
     const regexFindDash = /-/;
     if (regexFindDash.test(date)) {
         return date;
@@ -12,3 +12,20 @@ exports.isValidDate = date => {
     }
     return true;
 }
+
+exports.handleDateString = dateString => {
+    let date;
+    if (dateString.length === 0) {
+    
+        date = new Date();
+    
+    } else {
+        
+        dateString = convertDate(dateString);
+        date = new Date(dateString);
+    }
+
+    return date;
+};
+
+exports.convertDate = convertDate;
