@@ -16,8 +16,15 @@ describe('Time Stamp Service', () => {
             const currentDate = new Date();
             const delay = 5;
             expect(res.body.unix).toBeLessThan(currentDate.getTime());
-            expect(res.body.unix).toBeGreaterThan(currentDate.getTime() - delay);
+            expect(res.body.unix).toBeGreaterThanOrEqual(currentDate.getTime() - delay);
             expect(res.body.utc).toBe(currentDate.toUTCString());
+       });
+
+       it('When making a request with an invaild string the response is returned invaild', async () => {
+            const res = await request(app).get('/api/timestamp/abcdefg');
+            expect(res.body.unix).toBe(null);
+            expect(res.body.utc).toBe('Invalid Date');
+
        });
     });
 
