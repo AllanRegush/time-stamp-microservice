@@ -5,3 +5,10 @@ exports.convertDate = date => {
     } 
     return parseInt(date);
 }
+
+exports.isValidDate = date => {
+    if ( isNaN(date) ) {
+        return false;
+    }
+    return true;
+}

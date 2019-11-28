@@ -15,4 +15,18 @@ describe('Helper Functions', () => {
             expect(value).toEqual(expectedValue);
         });
     });
+
+    describe('Date Validator' , () => {
+        it('Returns True With Vaild Date', () => {
+            const date = new Date();
+            const value = helpers.isValidDate(date);
+            expect(value).toBeTruthy();
+        });
+
+        it('Returns False With Invaild Date', () => {
+            const date = new Date('abcedefg');
+            const value = helpers.isValidDate(date);
+            expect(value).toBeFalsy();
+        })
+    });
 });

@@ -8,9 +8,16 @@ exports.getStamp = (req, res) => {
         date_string = helpers.convertDate(date_string);
     }
     const date = new Date(date_string);
-    const payload = {
-        unix: date.getTime(),
-        utc: date.toUTCString(),
+    let payload;
+    if (! helpers.isValidDate( date ) ) {
+        payload = {
+            error: "Invalid Date"
+        }
+    } else {
+        payload = {
+            unix: date.getTime(),
+            utc: date.toUTCString(),
+        }
     }
     res.json(payload);
 } 

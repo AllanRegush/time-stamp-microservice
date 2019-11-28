@@ -22,8 +22,7 @@ describe('Time Stamp Service', () => {
 
        it('When making a request with an invaild string the response is returned invaild', async () => {
             const res = await request(app).get('/api/timestamp/abcdefg');
-            expect(res.body.unix).toBe(null);
-            expect(res.body.utc).toBe('Invalid Date');
+            expect(res.body.error).toBe("Invalid Date");
 
        });
     });
